@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/scripts/angular.min.js"></script>
+    <script src="/scripts/game.js"></script>
+</head>
+{% verbatim %}
+<body ng-app="gameApp">
+<div class='outer-circle-container circle-container' ng-controller="GameController">
+    <a href='#' class='outer-deg0'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg24'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg48'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg72'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg96'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg120'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg144'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg168'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg192'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg216'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg240'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg264'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg288'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg312'><img src='images/garbage.png'></a>
+    <a href='#' class='outer-deg336'><img src='images/garbage.png'></a>
+    <div class='inner-circle-container circle-container'>
+        <div ng-switch="appState">
+            <div ng-switch-when="choice">
+                <div class="info-container">
+                    <div class="bubble">
+                        <p>Let's put some balls in the basket</p>
+                        <div class="magnifier">
+                            <form name="testForm">
+                                <input ng-model="inputNumber" ng-pattern="/^\d+$/" ng-model-options="{ getterSetter: true }"  style="float: left"/>
+                                <img src="images/plus.png" ng-click="addNumber(inputNumber)" style="float: left">
+                            </form>
+
+                            <img src="images/round-done-button.png" ng-click="getNumbers()" style="float: right">
+                        </div>
+                    </div>
+                    <div class="numbers" ng-repeat="number in userNumbers track by $index">
+                        <p>{{number}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href='#' class='inner-deg0'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg24'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg48'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg72'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg96'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg120'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg144'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg168'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg192'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg216'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg240'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg264'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg288'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg312'><img src='images/garbage.png'></a>
+        <a href='#' class='inner-deg336'><img src='images/garbage.png'></a>
+    </div>
+</div>
+</body>
+{% endverbatim %}
+</html>

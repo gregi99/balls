@@ -1,0 +1,193 @@
+.inner-deg0 {
+  transform: rotate(0deg) translate(18em) rotate(-0deg); }
+
+.inner-deg24 {
+  transform: rotate(24deg) translate(18em) rotate(-24deg); }
+
+.inner-deg48 {
+  transform: rotate(48deg) translate(18em) rotate(-48deg); }
+
+.inner-deg72 {
+  transform: rotate(72deg) translate(18em) rotate(-72deg); }
+
+.inner-deg96 {
+  transform: rotate(96deg) translate(18em) rotate(-96deg); }
+
+.inner-deg120 {
+  transform: rotate(120deg) translate(18em) rotate(-120deg); }
+
+.inner-deg144 {
+  transform: rotate(144deg) translate(18em) rotate(-144deg); }
+
+.inner-deg168 {
+  transform: rotate(168deg) translate(18em) rotate(-168deg); }
+
+.inner-deg192 {
+  transform: rotate(192deg) translate(18em) rotate(-192deg); }
+
+.inner-deg216 {
+  transform: rotate(216deg) translate(18em) rotate(-216deg); }
+
+.inner-deg240 {
+  transform: rotate(240deg) translate(18em) rotate(-240deg); }
+
+.inner-deg264 {
+  transform: rotate(264deg) translate(18em) rotate(-264deg); }
+
+.inner-deg288 {
+  transform: rotate(288deg) translate(18em) rotate(-288deg); }
+
+.inner-deg312 {
+  transform: rotate(312deg) translate(18em) rotate(-312deg); }
+
+.inner-deg336 {
+  transform: rotate(336deg) translate(18em) rotate(-336deg); }
+
+.inner-deg360 {
+  transform: rotate(360deg) translate(18em) rotate(-360deg); }
+
+.outer-deg0 {
+  transform: rotate(0deg) translate(24em) rotate(-0deg); }
+
+.outer-deg24 {
+  transform: rotate(24deg) translate(24em) rotate(-24deg); }
+
+.outer-deg48 {
+  transform: rotate(48deg) translate(24em) rotate(-48deg); }
+
+.outer-deg72 {
+  transform: rotate(72deg) translate(24em) rotate(-72deg); }
+
+.outer-deg96 {
+  transform: rotate(96deg) translate(24em) rotate(-96deg); }
+
+.outer-deg120 {
+  transform: rotate(120deg) translate(24em) rotate(-120deg); }
+
+.outer-deg144 {
+  transform: rotate(144deg) translate(24em) rotate(-144deg); }
+
+.outer-deg168 {
+  transform: rotate(168deg) translate(24em) rotate(-168deg); }
+
+.outer-deg192 {
+  transform: rotate(192deg) translate(24em) rotate(-192deg); }
+
+.outer-deg216 {
+  transform: rotate(216deg) translate(24em) rotate(-216deg); }
+
+.outer-deg240 {
+  transform: rotate(240deg) translate(24em) rotate(-240deg); }
+
+.outer-deg264 {
+  transform: rotate(264deg) translate(24em) rotate(-264deg); }
+
+.outer-deg288 {
+  transform: rotate(288deg) translate(24em) rotate(-288deg); }
+
+.outer-deg312 {
+  transform: rotate(312deg) translate(24em) rotate(-312deg); }
+
+.outer-deg336 {
+  transform: rotate(336deg) translate(24em) rotate(-336deg); }
+
+.outer-deg360 {
+  transform: rotate(360deg) translate(24em) rotate(-360deg); }
+
+.info-container {
+  align-self: center;
+  width: 300px;
+  height: 300px;
+  margin: 1.75em auto 0; }
+
+.inner-circle-container {
+  display: flex;
+  position: relative;
+  align-self: center;
+  width: 36em;
+  height: 36em;
+  padding: 2.8em;
+  border-radius: 50%;
+  margin: 1.75em auto 0; }
+
+.outer-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 48em;
+  height: 48em;
+  padding: 2.8em;
+  border-radius: 50%;
+  margin: 1.75em auto 0; }
+
+.circle-container a {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
+  margin: -2em; }
+
+.circle-container img {
+  display: block;
+  width: 100%; }
+
+p {
+  font-family: 'Oswald', sans-serif; }
+
+.bubble {
+  position: relative;
+  text-align: center;
+  height: 75px;
+  padding: 5px;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #000000 solid 3px; }
+
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 14px 41px 14px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -41px;
+  top: 16px; }
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 43px 16px 0;
+  border-color: transparent #000000;
+  display: block;
+  width: 0;
+  z-index: 0;
+  left: -46px;
+  top: 14px; }
+
+.magnifier {
+  width: 100%;
+  margin: auto; }
+  .magnifier img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    height: 20px; }
+
+.numbers {
+  display: inline-block;
+  margin-top: 10px; }
+  .numbers p {
+    display: inline-block;
+    margin: 4px;
+    padding: 1px; }
+
+/*# sourceMappingURL=style.css.map */
