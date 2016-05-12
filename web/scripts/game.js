@@ -25,7 +25,9 @@ function GameController($scope, $http) {
                 numbers: vm.userNumbers
             }
         }).then(function successCallback(response) {
-            console.log(response);
+            var baskets = JSON.parse(response.data);
+
+            console.log(baskets);
         });
     }
     

@@ -16,11 +16,13 @@ $app->get('/', function () use ($app) {
 
 $app->post('/get-balls', function (Silex\Application $app, Symfony\Component\HttpFoundation\Request $request) {
     /** int[] **/
-    $userNumbers = $request->get('numbers', null);
+    $userRequest = json_decode($request->getContent(), true);
 
-    if ($userNumbers === null || false === is_array($userNumbers) || count($userNumbers) === 0) {
+    if ($userRequest === null || false === is_array($userRequest) || !array_key_exists('numbers', $userRequest)) {
         throw new InvalidArgumentException('no numbers, why ?');
     }
+
+    $userNumbers = $userRequest['numbers'];
 
     $basketCount = 30;
     $baskets     = [];
@@ -43,5 +45,5 @@ $app->post('/get-balls', function (Silex\Application $app, Symfony\Component\Htt
         ];
     }
 
-    return new Symfony\Component\HttpFoundation\Response(json_encode($baskets), 200);
+    return new Symfony\Component\HttpFoundation\JsonResponse(json_encode($baskets), 200);
 });

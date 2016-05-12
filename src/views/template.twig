@@ -26,10 +26,8 @@
     <a href='#' class='outer-deg288'><img src='images/garbage.png'></a>
     <a href='#' class='outer-deg312'><img src='images/garbage.png'></a>
     <a href='#' class='outer-deg336'><img src='images/garbage.png'></a>
-    <div class='inner-circle-container circle-container'>
-        <div ng-switch="appState">
-            <div ng-switch-when="choice">
-                <div class="info-container">
+    <div class='inner-circle-container circle-container' ng-switch="appState">
+                <div ng-switch-when="choice" class="info-container">
                     <div class="bubble">
                         <p>Let's put some balls in the basket</p>
                         <div class="magnifier">
@@ -44,8 +42,6 @@
                     <div class="numbers" ng-repeat="number in userNumbers track by $index">
                         <p>{{number}}</p>
                     </div>
-                </div>
-            </div>
         </div>
         <a href='#' class='inner-deg0'><img src='images/garbage.png'></a>
         <a href='#' class='inner-deg24'><img src='images/garbage.png'></a>
