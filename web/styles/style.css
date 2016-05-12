@@ -120,27 +120,40 @@
   border-radius: 50%;
   margin: 1.75em auto 0; }
 
-.circle-container a {
+.circle-container .basket-tooltip {
   display: block;
-  overflow: hidden;
+  overflow: visible;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 4em;
   height: 4em;
   margin: -2em; }
-
+.circle-container.ng-hide-add {
+  -webkit-animation: fadeOutLeftBig 0.4s;
+  display: block !important; }
+.circle-container.ng-hide-remove {
+  -webkit-animation: fadeInLeftBig 0.4s; }
 .circle-container img {
   display: block;
   width: 100%; }
 
-p {
+.basket {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/garbage.png");
+  background-size: cover; }
+
+p, a {
   font-family: 'Oswald', sans-serif; }
 
 .bubble {
   position: relative;
   text-align: center;
-  height: 90px;
+  height: 125px;
   padding: 5px;
   background: #FFFFFF;
   -webkit-border-radius: 10px;
@@ -174,7 +187,8 @@ p {
 
 .magnifier {
   width: 100%;
-  margin: auto; }
+  margin: auto;
+  overflow: auto; }
   .magnifier img {
     display: block;
     margin-left: auto;
@@ -189,5 +203,14 @@ p {
     display: inline-block;
     margin: 4px;
     padding: 1px; }
+
+.choiceText {
+  position: relative;
+  font-size: 11px;
+  overflow: auto; }
+
+.error {
+  margin: 0;
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */

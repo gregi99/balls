@@ -7,7 +7,7 @@ $app = new Silex\Application();
 $app['debug'] = true;
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
+    'twig.path' => __DIR__.'/Resources/views',
 ));
 
 $app->get('/', function () use ($app) {
@@ -32,7 +32,7 @@ $app->post('/get-balls', function (Silex\Application $app, Symfony\Component\Htt
         $balls         = [];
 
         for ($k = 0; $k < $ballsInBasket; $k++) {
-            $balls[] = random_int(1, 7);
+            $balls[] = random_int(1, 999);
         }
 
         $intersection      = array_intersect($userNumbers, $balls);

@@ -1,0 +1,85 @@
+$inner-radius: 18;
+$outer-radius: 24;
+
+$itemCount: 15;
+$radiusPerItem: 360 / $itemCount;
+
+
+@for $i from 0 through $itemCount {
+  $deg: $i * $radiusPerItem;
+
+  .inner-deg#{$deg} { transform: rotate(#{$deg}deg) translate(#{$inner-radius}em) rotate(-#{$deg}deg); }
+}
+
+@for $i from 0 through $itemCount {
+  $deg: $i * $radiusPerItem;
+
+  .outer-deg#{$deg} { transform: rotate(#{$deg}deg) translate(#{$outer-radius}em) rotate(-#{$deg}deg); }
+}
+
+.info-container {
+  align-self: center;
+  width: 300px;
+  height: 300px;
+  margin: 1.75em auto 0;
+}
+
+.inner-circle-container {
+  display: flex;
+  position: relative;
+  align-self: center;
+  width: #{$inner-radius * 2}em;
+  height: #{$inner-radius * 2}em;
+  padding: 2.8em;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+}
+
+.outer-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: #{$outer-radius * 2}em;
+  height: #{$outer-radius * 2}em;
+  padding: 2.8em;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+}
+
+.circle-container {
+  .basket-tooltip {
+    display: block;
+    overflow: visible;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+  }
+
+  &.ng-hide-add {
+    -webkit-animation: fadeOutLeftBig 0.4s;
+    display: block!important;
+  }
+
+  &.ng-hide-remove {
+    -webkit-animation: fadeInLeftBig 0.4s;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+.basket {
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../../web/images/garbage.png");
+  background-size: cover;
+}
+

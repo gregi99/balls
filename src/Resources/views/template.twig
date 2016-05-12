@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/angular-tooltips.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="/scripts/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-tooltips.min.js"></script>
+    <script src="/scripts/game.js"></script>
+</head>
+{% verbatim %}
+<body ng-app="gameApp">
+
+<div class='outer-circle-container circle-container' ng-controller="GameController">
+    <div ng-repeat="basket in outerBaskets track by $index"  >
+        <a href='#' class='outer-deg{{ $index * 24 }} basket-tooltip' ng-hide="canHideBasketElement(basket)" >
+            <div class="basket" > <p tooltips tooltip-side="left" tooltip-template="{{ basket.balls }}">{{ $index + 1 }}</p> </div>
+        </a>
+    </div>
+    <div class='inner-circle-container circle-container' ng-switch="appState">
+                <div ng-switch-when="dataGathering" class="info-container">
+                    <div class="bubble">
+                        <p>Let's put some balls in the basket</p>
+                        <div class="magnifier">
+                            <form name="testForm">
+                                <input ng-model="inputNumber" ng-model-options="{ getterSetter: true }"  style="float: left"/>
+                                <img src="images/plus.png" ng-click="addNumber(inputNumber)" style="float: left">
+                            </form>
+
+                            <img src="images/round-done-button.png" ng-click="getNumbers()" style="float: right">
+                        </div>
+                        <div ng-if="numberError == true" class="error"><p>Bad Number !</p></div>
+                    </div>
+                    <div class="numbers" ng-repeat="number in userNumbers track by $index">
+                        <p>{{number}}</p>
+                    </div>
+                </div>
+                <div ng-switch-when="choice" class="info-container">
+                    <div class="bubble">
+                        <p>Now let's make some choices</p>
+                        <div class="choiceText">
+                            <a href="#" ng-click="setChoiceState('onlyOneBall')" style="float: left;">Baskets With One user Ball</a>
+                            <a href="#" ng-click="setChoiceState('allUserBalls')" style="float: right;">Baskets With all user Balls</a>
+                        </div>
+                        <a href="#" ng-click="endRound()" style="margin-top: 4px;">I'm done</a>
+                    </div>
+                    <div class="numbers" ng-repeat="number in userNumbers track by $index">
+                        <p>{{number}}</p>
+                    </div>
+                </div>
+                <div ng-switch-when="end" class="info-container">
+                    <div class="bubble">
+                        <p>And that's all for now</p>
+                        <a href="#" ng-click="resetGame()" style="margin-top: 15px;">Play Again ?</a>
+                    </div>
+                </div>
+        <div ng-repeat="basket in outerBaskets track by $index">
+            <a href='#' class='inner-deg{{ $index * 24 }} basket-tooltip' ng-hide="canHideBasketElement(basket)">
+                <div class="basket"> <p tooltips tooltip-side="left" tooltip-template="{{ basket.balls }}">{{ $index + 16 }}</p> </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endverbatim %}
+</html>
